@@ -1,0 +1,48 @@
+/* === FONTS === */
+@import 'fonts';
+/* === / FONTS === */
+
+/* === VARIABLES === */
+@import 'variables';
+/* === / VARIABLES === */
+
+/* === NULLSTYLE === */
+@import 'nullstyle';
+/* === / NULLSTYLE === */
+
+/* === WRAPPER === */
+.App{
+	width: 100%;
+	min-height: 100vh;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+/* === / WRAPPER === */
+
+/* === MAIN-GRID === */
+.main{
+	flex: 1 1 auto;
+}
+.container{max-width: $limited;margin: 0 auto;width: 100%;
+	@media (max-width: $lg){max-width: none;}
+}
+/* === / MAIN-GRID === */
+
+/* === COMONN ===*/
+.main{
+	flex: 1 1 auto;
+	overflow: hidden;
+	color: $color_white;
+}
+.outer{
+	padding-right: 20px;
+	padding-left: 20px;
+}
+.section-title{
+	font-weight: 900;
+	font-size: 32px;
+	margin-bottom: 70px;
+	text-align: center;
+}
+/* === / COMONN ===*/

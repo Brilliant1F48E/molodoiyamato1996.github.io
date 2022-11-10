@@ -1,0 +1,15 @@
+@import '../../static/scss/variables';
+
+
+.faq{
+	background-color: $color_black;
+	padding-top: 70px;
+	padding-bottom: 70px;
+
+	.container{
+		display: flex;
+		flex-direction: column;
+		gap: $base * 3px;
+	}
+}
+

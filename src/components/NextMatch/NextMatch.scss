@@ -1,0 +1,63 @@
+@import '../../static/scss/variables';
+
+
+.next-match{
+	background-color: $color_black;
+	padding-top: 70px;
+	padding-bottom: 70px;
+	
+	&__row{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: $base * 10px;
+
+		.team{
+			flex: 0 1 200px;
+			max-height: 200px;
+		}
+	}
+	.button-wrapper{
+		display: flex;
+		justify-content: center;
+	}
+
+	&__info{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: $base * 1px;
+
+		&-date,
+		&-format{
+			font-size: 24px;
+		}
+
+		&-decoration{
+			font-size: 72px;
+			font-weight: $fw-extrabold;
+		}
+	}
+}
+
+.button{
+	display: inline-block;
+	max-width: 100%;
+	font-family: $ff-primary;
+	font-weight: $fw-bold;
+	font-size: 18px;
+	cursor: pointer;
+	padding: 14px 27px;
+
+	&_border{
+		color: $color_orange;
+		border: 4px solid $color_orange;
+		transition: .5s;
+
+		&:hover{
+			color: $color_black;
+			background-color: $color_orange;
+		}
+	}
+}
+
