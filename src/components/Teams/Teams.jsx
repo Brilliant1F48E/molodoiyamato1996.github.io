@@ -1,23 +1,29 @@
+import { useEffect, useState } from 'react';
 import Team from '../Team/Team';
-import team1 from '../../static/img/team1.jpeg';
-import team2 from '../../static/img/team2.jpg';
 
 import './Teams.scss';
 
 
 const Teams = () => {
+	const [currentTeams, setCurrentTeams] = useState([]);
+
+	useEffect(() => {
+		fetch('/api/teams/getTournamentTeams')
+			.then(response => response.json())
+			.then(data => setCurrentTeams(data.items))
+	}, [])
+
+	let teams = <h2 className='teams__notify'>На данный момент ни одна команда не зарегистрирована</h2>;
+
+	if (currentTeams.length > 0) {
+		teams = currentTeams.map(team => <Team key={team.id} img={team.img} />);
+	}
+
 	return (
 		<section className="teams outer">
 			<div className="section-title">Команды</div>
 			<div className="container">
-				<Team img={team1} />
-				<Team img={team2} />
-				<Team img={team1} />
-				<Team img={team2} />
-				<Team img={team1} />
-				<Team img={team2} />
-				<Team img={team1} />
-				<Team img={team2} />
+				{teams}
 			</div>
 		</section>
 	);

@@ -6,6 +6,9 @@
 	padding-top: 70px;
 	padding-bottom: 70px;
 
+	&__notify{
+		color: $color_white;
+	}
 	.container{
 		display: flex;
 		align-items: center;
@@ -16,6 +19,5 @@
 
 	.team{
 		flex: 0 1 234px;
-		max-height: 234px;
 	}
 }

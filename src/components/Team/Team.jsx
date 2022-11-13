@@ -2,15 +2,12 @@ import './Team.scss';
 
 
 const Team = (props) => {
-	let teamName = (
-		<div className="team__name">
-			{props.name}
-		</div>
-	)
+	const img = `/images/${props.img}`;
+
 	return (
 		<div className="team">
 			<div className="team__img">
-				<img src={props.img} alt={props.name} />
+				<img src={process.env.PUBLIC_URL + img} alt={props.name} />
 			</div>
 		</div>
 	);
