@@ -1,0 +1,15 @@
+@import '../../../../static/scss/variables';
+
+
+.match {
+	display: flex;
+	flex-direction: column;
+
+	.match-team + .match-team{
+		border-top: 1px solid #AAAAAA;
+	}
+
+	.match-team{
+		min-height: 40px;
+	}
+}

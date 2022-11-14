@@ -1,0 +1,153 @@
+@import '../../../static/scss/variables';
+
+
+.stage{
+	display: flex;
+	flex-direction: column;
+
+	&__title{
+		font-weight: $fw-semibold;
+		margin-bottom: 30px;
+		text-align: center;
+	}
+	&__matches{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100%;
+
+		// &.final .match{
+		// 	position: relative;
+
+		// 	&::after,
+		// 	&::before{
+		// 		content: '';
+		// 		position: absolute;
+		// 		top: 50%;
+		// 		height: 2px;
+		// 		width: 50%;
+		// 		background-color: $color_white;
+		// 	}
+
+		// 	&::after{
+		// 		left: 100%;
+		// 	}
+
+		// 	&::before{
+		// 		right: 100%;
+		// 	}
+		// }
+
+		&.quarterfinal{
+			gap: 20px;
+		}
+
+		&.quarterfinal .item{
+			flex: 0 1 25%;
+		}
+
+		&.quarterfinal .match{
+			position: relative;
+
+			&::after{
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 100%;
+				transform: translateY(-50%);
+				width: 52%;
+				height: 4px;
+				background-color: #AAAAAA;
+			}
+		}
+
+		&.quarterfinal.B .match{
+			position: relative;
+
+			&::after{
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: -52%;
+				transform: translateY(-50%);
+				width: 52%;
+				height: 4px;
+				background-color: #AAAAAA;
+			}
+		}
+
+		&.semifinal{
+			width: 100%;
+		}
+
+		&.semifinal .item{
+			width: 100%;
+			flex: 0 1 calc(50% - 10px);
+			position: relative;
+			display: flex;
+			align-items: center;
+
+			&::before{
+				content: '';
+				position: absolute;
+				top: 50%;
+				right: 100%;
+				transform: translateY(-50%);
+				width: 50%;
+				height: 4px;
+				background-color: #AAAAAA;
+			}
+
+			&::after{
+				content: '';
+				position: absolute;
+				top: 50%;
+				right: calc(150% - 4px);
+				height: 104.5px;
+				transform: translateY(-50%);
+				width: 4px;
+				background-color: #AAAAAA;
+			}
+		}
+
+		&.semifinal.B .item{
+			width: 100%;
+			flex: 0 1 calc(50% - 10px);
+			position: relative;
+			display: flex;
+			align-items: center;
+
+			&::before{
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 100%;
+				transform: translateY(-50%);
+				width: 50%;
+				height: 4px;
+				background-color: #AAAAAA;
+			}
+
+			&::after{
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: calc(150% - 4px);
+				height: 104.5px;
+				transform: translateY(-50%);
+				width: 4px;
+				background-color: #AAAAAA;
+			}
+		}
+
+		&.final .item{
+			flex: 0 1 100%;
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	.match{
+		width: 130px;
+	}
+}

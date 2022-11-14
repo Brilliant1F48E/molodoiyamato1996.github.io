@@ -13,10 +13,10 @@ const TournamentBracket = () => {
 				<Stage stage='QUARTERFINAL' group='A' />
 				<Stage stage='SEMIFINAL' group='A' />
 
-				<Stage stage='QUARTERFINAL' group='B' />
-				<Stage stage='SEMIFINAL' group='B' />
+				<Stage stage='FINAL' group={false} />
 
-				<Stage stage='FINAL' />
+				<Stage stage='SEMIFINAL' group='B' />
+				<Stage stage='QUARTERFINAL' group='B' />
 			</div>
 		</section>
 	);
