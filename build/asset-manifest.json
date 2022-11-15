@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f85c133f.css",
+    "main.js": "/static/js/main.52d2a5f3.js",
+    "static/js/787.b701888c.chunk.js": "/static/js/787.b701888c.chunk.js",
+    "static/media/hero-bg3.jpg": "/static/media/hero-bg3.d8c0c01eb4dffd449bdf.jpg",
+    "static/media/Montserrat-SemiBold.ttf": "/static/media/Montserrat-SemiBold.d5e0cc788cba9ced1fb9.ttf",
+    "static/media/Montserrat-ExtraBold.ttf": "/static/media/Montserrat-ExtraBold.3a9ee100617f45a96d92.ttf",
+    "static/media/Montserrat-Medium.ttf": "/static/media/Montserrat-Medium.c86e3b9010ff63c99166.ttf",
+    "static/media/Montserrat-Bold.ttf": "/static/media/Montserrat-Bold.2c155811b35513d5beaa.ttf",
+    "static/media/Montserrat-Light.ttf": "/static/media/Montserrat-Light.6fcc9263a21be961d246.ttf",
+    "static/media/Montserrat-Regular.ttf": "/static/media/Montserrat-Regular.ceb11275ab638627a643.ttf",
+    "static/media/Montserrat-Black.ttf": "/static/media/Montserrat-Black.08437fd0aa82576d3678.ttf",
+    "static/media/PPNeueMachina-UltraboldItalic.woff2": "/static/media/PPNeueMachina-UltraboldItalic.4d21a2f275641b9ba4cb.woff2",
+    "static/media/PPNeueMachina-RegularItalic.woff2": "/static/media/PPNeueMachina-RegularItalic.aa1c4475165d0eb6e810.woff2",
+    "static/media/PPNeueMachina-LightItalic.woff2": "/static/media/PPNeueMachina-LightItalic.485f1c351678b7dcfa3e.woff2",
+    "static/media/PPNeueMachina-Ultrabold.woff2": "/static/media/PPNeueMachina-Ultrabold.03d2d1e753ce9b162ed2.woff2",
+    "static/media/PPNeueMachina-Light.woff2": "/static/media/PPNeueMachina-Light.fc5e96850dde6f52fbde.woff2",
+    "static/media/PPNeueMachina-Regular.woff2": "/static/media/PPNeueMachina-Regular.cb444b92e5dab59c0c6f.woff2",
+    "static/media/hero-text.svg": "/static/media/hero-text.0dae93f77c04fb855d6c7c14fe0f9acb.svg",
+    "static/media/logo.svg": "/static/media/logo.dd7306887a1faf8679f52996308075f7.svg",
+    "index.html": "/index.html",
+    "static/media/arrow-down.svg": "/static/media/arrow-down.9057615b7209f0848345174074b1007a.svg",
+    "main.f85c133f.css.map": "/static/css/main.f85c133f.css.map",
+    "main.52d2a5f3.js.map": "/static/js/main.52d2a5f3.js.map",
+    "787.b701888c.chunk.js.map": "/static/js/787.b701888c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f85c133f.css",
+    "static/js/main.52d2a5f3.js"
+  ]
+}
