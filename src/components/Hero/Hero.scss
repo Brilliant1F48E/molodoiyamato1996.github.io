@@ -3,8 +3,7 @@
 
 .hero{
 	color: $color_white;
-	padding-top: 300px;
-	padding-bottom: 300px;
+	height: 100vh;
 	background-image: url(../../static/img/hero-bg3.jpg);
 	background-position: center center;
 	background-size: cover;
@@ -53,6 +52,7 @@
 		max-width: 620px;
 		position: relative;
 		z-index: 5;
+		margin-top: auto;
 		margin-bottom: auto;
 
 		h1{

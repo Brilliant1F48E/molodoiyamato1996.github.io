@@ -11,31 +11,41 @@ const NextMatch = () => {
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
-		fetch('api/games/getNextGame', {
-			method: 'GET',
-			headers: {
-				'Content-Type': 'application/json;charset=utf-8'
-			}
-		})
+		fetch('/api/games/getNextGame')
 			.then(response => response.json())
-			.then(
-				(result) => {
-					setNextGame(result.items.next_game);
-					setIsLoaded(true);
-				},
-				(error) => {
-					setError(error.error);
-					setIsLoaded(true);
+			.then((body) => {
+				setIsLoaded(true);
+
+				if (body['error']) {
+					setError(body.error);
+				} else {
+					setNextGame(body.items);
 				}
-			)
+			})
+			.catch((error) => {
+				setError(error.error);
+			})
 	}, [])
 
-	if (error) {
+	if (nextGame) {
 		return (
 			<section className="next-game outer">
 				<div className="section-title">Следующий матч</div>
 				<div className="container">
-					Следующая игра ещё не назначенна
+					<div className="next-game__row">
+						<Team photo={nextGame.first_tournament_team.photo} height={200} />
+						<div className="next-game__info">
+							<div className="next-game__info-date">{nextGame.start_date}</div>
+							<div className="next-game__info-decoration">
+								VS
+							</div>
+							<div className="next-game__info-format">{nextGame.format}</div>
+						</div>
+						<Team photo={nextGame.second_tournament_team.photo} height={200} />
+					</div>
+					<div className="button-wrapper">
+						<Link className='button button_border' to='live' spy={false} smooth={true} duration={1000}>Смотреть игру</Link>
+					</div>
 				</div>
 			</section>
 		)
@@ -44,20 +54,7 @@ const NextMatch = () => {
 			<section className="next-game outer">
 				<div className="section-title">Следующий матч</div>
 				<div className="container">
-					<div className="next-game__row">
-						{/* <Team photo={nextGame.first_tournament_team.photo} /> */}
-						<div className="next-game__info">
-							{/* <div className="next-game__info-date">{nextGame.start_date}</div> */}
-							<div className="next-game__info-decoration">
-								VS
-							</div>
-							{/* <div className="next-game__info-format">{nextGame.format}</div> */}
-						</div>
-						{/* <Team photo={nextGame.second_tournament_team.photo} /> */}
-					</div>
-					<div className="button-wrapper">
-						<Link className='button button_border' to='live' spy={false} smooth={true} duration={1000}>Смотреть игру</Link>
-					</div>
+					<div className='next-game__notify'>Следующая игра ещё не назначенна</div>
 				</div>
 			</section>
 		)

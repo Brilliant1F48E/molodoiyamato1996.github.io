@@ -1,7 +1,7 @@
 @import '../../static/scss/variables';
 
 
-.next-match{
+.next-game{
 	background-color: $color_black;
 	padding-top: 70px;
 	padding-bottom: 70px;
@@ -22,6 +22,10 @@
 		justify-content: center;
 	}
 
+	&__notify{
+		text-align: center;
+	}
+	
 	&__info{
 		display: flex;
 		flex-direction: column;

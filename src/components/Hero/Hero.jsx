@@ -21,7 +21,7 @@ const Hero = () => {
 						Платформа для проведения киберспортивных сезонных онлайн турниров. Среди учащихся колледжей и школ.
 					</p>
 				</div>
-				<Link className='scroll-down' to='next-match' spy={true} smooth={true} duration={1000}>
+				<Link className='scroll-down' to='next-game' spy={true} smooth={true} duration={1000}>
 					<HandySvg src={arrowDown} />
 				</Link>
 			</div>

@@ -7,7 +7,7 @@ import './Stage.scss';
 
 const Stage = (props) => {
 	const [matches, setMatches] = useState([]);
-	const [, setIsLoaded] = useState(false);
+	const [isLoaded, setIsLoaded] = useState(false);
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
