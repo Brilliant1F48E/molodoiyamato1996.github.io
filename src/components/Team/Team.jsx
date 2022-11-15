@@ -2,11 +2,11 @@ import './Team.scss';
 
 
 const Team = (props) => {
-	const img = `/images/${props.img}`;
+	const img = `/images/${props.photo}`;
 
 	return (
 		<div className="team">
-			<div className="team__img">
+			<div style={{ height: props.height }} className="team__img">
 				<img src={process.env.PUBLIC_URL + img} alt={props.name} />
 			</div>
 		</div>

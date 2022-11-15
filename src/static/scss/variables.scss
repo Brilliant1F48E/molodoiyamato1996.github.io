@@ -2,7 +2,9 @@ $ff-primary: PPNeueMachina;
 $ff-secondary: Montserrat;
 
 $base: 10;
-$limited: 1180px;
+$limited: 1440px;
+
+$width-stage: ($limited / 9) / $limited * 100%;
 
 $sm: 576.98px;
 $md: 768.98px;

@@ -7,6 +7,8 @@ import './Stage.scss';
 
 const Stage = (props) => {
 	const [matches, setMatches] = useState([]);
+	const [, setIsLoaded] = useState(false);
+	const [error, setError] = useState(null);
 
 	useEffect(() => {
 		const data = {
@@ -22,7 +24,15 @@ const Stage = (props) => {
 			body: JSON.stringify(data)
 		})
 			.then(response => response.json())
-			.then(data => setMatches(data.items))
+			.then(
+				(result) => {
+					setMatches(result.items);
+					setIsLoaded(true);
+				},
+				(error) => {
+					setError(error.error);
+					setIsLoaded(true);
+				});
 	}, [])
 
 	let stageTitleText = '';
@@ -39,7 +49,12 @@ const Stage = (props) => {
 		countMatches = 1;
 	}
 
-	const matchesActive = matches.map(match => <Match key={match.id} firstTournamentTeamId={match.first_tournament_team_id} secondTournamentTeamId={match.second_tournament_team_id} />);
+	const matchesActive = matches.map(match => {
+		const firstTournamentTeamId = match.first_tournament_team_id ? match.first_tournament_team_id : false
+		const secondTournamentTeamId = match.second_tournament_team_id ? match.second_tournament_team_id : false
+
+		return <Match key={match.id} firstTournamentTeamId={firstTournamentTeamId} secondTournamentTeamId={secondTournamentTeamId} />
+	});
 
 	if (matchesActive.length !== countMatches) {
 		const left = countMatches - matchesActive.length
@@ -50,7 +65,7 @@ const Stage = (props) => {
 	}
 
 	return (
-		<div className="stage">
+		<div className={`stage ${props.stage.toLowerCase()} ${props.group}`}>
 			<div className="stage__title">{stageTitleText}</div>
 			<div className={`stage__matches ${props.stage.toLowerCase()} ${props.group}`}>
 				{matchesActive}

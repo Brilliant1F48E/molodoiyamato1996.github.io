@@ -9,9 +9,40 @@
 	.container{
 		display: flex;
 		justify-content: space-between;
+		
+		.stage + .stage {
+			margin-left: $width-stage;
+		}
 	}
 
 	.stage{
-		flex: 0 1 130px;
+		flex: 0 1 $width-stage;
+	}
+}
+
+@media (max-width: $lg) {
+	.tournament-bracket{
+		.container{
+			flex-direction: column;
+
+			.stage + .stage {
+				margin-left: 0;
+				margin-top: 80px;
+			}
+		}
+
+		.stage.semifinal.A{
+			order: 3;
+		}
+		.stage.final{
+			order: 5;
+		}
+		.stage.quarterfinal.B{
+			order: 2;
+		}
+
+		.stage.semifinal.B{
+			order: 4;
+		}
 	}
 }

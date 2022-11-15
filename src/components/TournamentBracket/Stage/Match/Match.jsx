@@ -5,12 +5,16 @@ import MatchTeam from './MatchTeam/MatchTeam';
 import './Match.scss';
 
 const Match = (props) => {
-	const [matchFirstTournamentTeam, setMatchFirstTournamentTeam] = useState(false)
-	const [matchSecondTournamentTeam, setMatchSecondTournamentTeam] = useState(false)
+	const [firstTournamentTeam, setFirstTournamentTeam] = useState(null);
+	const [errorFirstTournamentTeam, setErrorFirstTournamentTeam] = useState(null);
+	const [firstTournamentTeamIsLoaded, setFirstTournamentTeamIsLoaded] = useState(false);
+
+	const [secondTournamentTeam, setSecondTournamentTeam] = useState(null);
+	const [errorSecondTournamentTeam, setErrorSecondTournamentTeam] = useState(null);
+	const [secondTournamentTeamIsLoaded, setSecondTournamentTeamIsLoaded] = useState(false);
 
 	useEffect(() => {
 		if (props.firstTournamentTeamId) {
-			console.log(`Ключ первой команды: ${props.firstTournamentTeamId}`);
 			fetch("api/match/getMatchTournamentTeams", {
 				method: 'POST',
 				headers: {
@@ -21,11 +25,18 @@ const Match = (props) => {
 				})
 			})
 				.then(response => response.json())
-				.then(data => setMatchFirstTournamentTeam(data.items))
+				.then(
+					(result) => {
+						setFirstTournamentTeam(result.items)
+						setFirstTournamentTeamIsLoaded(true)
+					},
+					(error) => {
+						setErrorFirstTournamentTeam(error.error)
+						setFirstTournamentTeamIsLoaded(true)
+					});
 		}
 
 		if (props.secondTournamentTeamId) {
-			console.log(`Ключ второй команды: ${props.secondTournamentTeamId}`);
 			fetch("api/match/getMatchTournamentTeams", {
 				method: 'POST',
 				headers: {
@@ -36,15 +47,23 @@ const Match = (props) => {
 				})
 			})
 				.then(response => response.json())
-				.then(data => setMatchSecondTournamentTeam(data.items))
+				.then(
+					(result) => {
+						setSecondTournamentTeam(result.items)
+						setSecondTournamentTeamIsLoaded(true)
+					},
+					(error) => {
+						setErrorSecondTournamentTeam(error.error)
+						setSecondTournamentTeamIsLoaded(true)
+					});
 		}
 	}, [])
 
 	const matchTournamentTeamEls = []
 
-	if (matchFirstTournamentTeam) {
+	if (firstTournamentTeam) {
 		matchTournamentTeamEls.push(
-			<MatchTeam key={matchFirstTournamentTeam.id} photo={matchFirstTournamentTeam.photo} name={matchFirstTournamentTeam.name} />
+			<MatchTeam key={firstTournamentTeam.id} photo={firstTournamentTeam.photo} name={firstTournamentTeam.name} />
 		)
 	} else {
 		matchTournamentTeamEls.push(
@@ -52,9 +71,9 @@ const Match = (props) => {
 		)
 	}
 
-	if (matchSecondTournamentTeam) {
+	if (secondTournamentTeam) {
 		matchTournamentTeamEls.push(
-			<MatchTeam key={matchSecondTournamentTeam.id} photo={matchSecondTournamentTeam.photo} name={matchSecondTournamentTeam.name} />
+			<MatchTeam key={secondTournamentTeam.id} photo={secondTournamentTeam.photo} name={secondTournamentTeam.name} />
 		)
 	} else {
 		matchTournamentTeamEls.push(
@@ -62,7 +81,6 @@ const Match = (props) => {
 		)
 	}
 
-	console.log(matchTournamentTeamEls);
 	return (
 		<div className="item">
 			<div className="match">

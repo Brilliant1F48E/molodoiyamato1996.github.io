@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 import Team from '../Team/Team';
 
@@ -5,27 +6,63 @@ import './NextMatch.scss';
 
 
 const NextMatch = () => {
-	return (
-		<section className="next-match outer">
-			<div className="section-title">Следующий матч</div>
-			<div className="container">
-				<div className="next-match__row">
-					{/* <Team img={team1} /> */}
-					<div className="next-match__info">
-						<div className="next-match__info-date">15.20.2022 15:00</div>
-						<div className="next-match__info-decoration">
-							VS
+	const [nextGame, setNextGame] = useState(null);
+	const [isLoaded, setIsLoaded] = useState(false);
+	const [error, setError] = useState(null);
+
+	useEffect(() => {
+		fetch('api/games/getNextGame', {
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json;charset=utf-8'
+			}
+		})
+			.then(response => response.json())
+			.then(
+				(result) => {
+					setNextGame(result.items.next_game);
+					setIsLoaded(true);
+				},
+				(error) => {
+					setError(error.error);
+					setIsLoaded(true);
+				}
+			)
+	}, [])
+
+	if (error) {
+		return (
+			<section className="next-game outer">
+				<div className="section-title">Следующий матч</div>
+				<div className="container">
+					Следующая игра ещё не назначенна
+				</div>
+			</section>
+		)
+	} else {
+		return (
+			<section className="next-game outer">
+				<div className="section-title">Следующий матч</div>
+				<div className="container">
+					<div className="next-game__row">
+						{/* <Team photo={nextGame.first_tournament_team.photo} /> */}
+						<div className="next-game__info">
+							{/* <div className="next-game__info-date">{nextGame.start_date}</div> */}
+							<div className="next-game__info-decoration">
+								VS
+							</div>
+							{/* <div className="next-game__info-format">{nextGame.format}</div> */}
 						</div>
-						<div className="next-match__info-format">Bo3</div>
+						{/* <Team photo={nextGame.second_tournament_team.photo} /> */}
 					</div>
-					{/* <Team img={team2} /> */}
+					<div className="button-wrapper">
+						<Link className='button button_border' to='live' spy={false} smooth={true} duration={1000}>Смотреть игру</Link>
+					</div>
 				</div>
-				<div className="button-wrapper">
-					<Link className='button button_border' to='live' spy={false} smooth={true} duration={1000}>Смотреть игру</Link>
-				</div>
-			</div>
-		</section>
-	)
+			</section>
+		)
+	}
+
 }
 
 export default NextMatch;

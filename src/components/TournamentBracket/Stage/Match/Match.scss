@@ -13,3 +13,22 @@
 		min-height: 40px;
 	}
 }
+
+
+@media (max-width: $lg) {
+	.match{
+		border-radius: 10px;
+		overflow: hidden;
+
+		.match-team{
+			min-height: 90px;
+		}
+	}
+}
+
+
+@media (max-width: $md) {
+	.match .match-team{
+		min-height: 60px;
+	}
+}

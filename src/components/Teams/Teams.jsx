@@ -16,7 +16,7 @@ const Teams = () => {
 	let teams = <h2 className='teams__notify'>На данный момент ни одна команда не зарегистрирована</h2>;
 
 	if (currentTeams.length > 0) {
-		teams = currentTeams.map(team => <Team key={team.id} img={team.img} />);
+		teams = currentTeams.map(team => <Team key={team.id} photo={team.img} height={234} />);
 	}
 
 	return (
