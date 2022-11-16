@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/molodoiyamato1996/static/css/main.4a320389.css",
+    "main.js": "/molodoiyamato1996/static/js/main.5c2fb780.js",
+    "static/js/787.b701888c.chunk.js": "/molodoiyamato1996/static/js/787.b701888c.chunk.js",
+    "static/media/hero-bg3.jpg": "/molodoiyamato1996/static/media/hero-bg3.d8c0c01eb4dffd449bdf.jpg",
+    "static/media/Montserrat-SemiBold.ttf": "/molodoiyamato1996/static/media/Montserrat-SemiBold.d5e0cc788cba9ced1fb9.ttf",
+    "static/media/Montserrat-ExtraBold.ttf": "/molodoiyamato1996/static/media/Montserrat-ExtraBold.3a9ee100617f45a96d92.ttf",
+    "static/media/Montserrat-Medium.ttf": "/molodoiyamato1996/static/media/Montserrat-Medium.c86e3b9010ff63c99166.ttf",
+    "static/media/Montserrat-Bold.ttf": "/molodoiyamato1996/static/media/Montserrat-Bold.2c155811b35513d5beaa.ttf",
+    "static/media/Montserrat-Light.ttf": "/molodoiyamato1996/static/media/Montserrat-Light.6fcc9263a21be961d246.ttf",
+    "static/media/Montserrat-Regular.ttf": "/molodoiyamato1996/static/media/Montserrat-Regular.ceb11275ab638627a643.ttf",
+    "static/media/Montserrat-Black.ttf": "/molodoiyamato1996/static/media/Montserrat-Black.08437fd0aa82576d3678.ttf",
+    "static/media/PPNeueMachina-UltraboldItalic.woff2": "/molodoiyamato1996/static/media/PPNeueMachina-UltraboldItalic.4d21a2f275641b9ba4cb.woff2",
+    "static/media/PPNeueMachina-RegularItalic.woff2": "/molodoiyamato1996/static/media/PPNeueMachina-RegularItalic.aa1c4475165d0eb6e810.woff2",
+    "static/media/PPNeueMachina-LightItalic.woff2": "/molodoiyamato1996/static/media/PPNeueMachina-LightItalic.485f1c351678b7dcfa3e.woff2",
+    "static/media/PPNeueMachina-Ultrabold.woff2": "/molodoiyamato1996/static/media/PPNeueMachina-Ultrabold.03d2d1e753ce9b162ed2.woff2",
+    "static/media/PPNeueMachina-Light.woff2": "/molodoiyamato1996/static/media/PPNeueMachina-Light.fc5e96850dde6f52fbde.woff2",
+    "static/media/PPNeueMachina-Regular.woff2": "/molodoiyamato1996/static/media/PPNeueMachina-Regular.cb444b92e5dab59c0c6f.woff2",
+    "static/media/hero-text.svg": "/molodoiyamato1996/static/media/hero-text.0dae93f77c04fb855d6c7c14fe0f9acb.svg",
+    "index.html": "/molodoiyamato1996/index.html",
+    "static/media/logo.svg": "/molodoiyamato1996/static/media/logo.dd7306887a1faf8679f52996308075f7.svg",
+    "static/media/arrow-down.svg": "/molodoiyamato1996/static/media/arrow-down.1199af69168f90c9caea9d1262e733bc.svg",
+    "main.4a320389.css.map": "/molodoiyamato1996/static/css/main.4a320389.css.map",
+    "main.5c2fb780.js.map": "/molodoiyamato1996/static/js/main.5c2fb780.js.map",
+    "787.b701888c.chunk.js.map": "/molodoiyamato1996/static/js/787.b701888c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4a320389.css",
+    "static/js/main.5c2fb780.js"
+  ]
+}
