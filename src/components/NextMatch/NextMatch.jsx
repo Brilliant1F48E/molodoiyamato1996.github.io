@@ -28,6 +28,7 @@ const NextMatch = () => {
 	}, [])
 
 	if (nextGame) {
+		console.log(typeof (nextGame.start_date));
 		return (
 			<section className="next-game outer">
 				<div className="section-title">Следующий матч</div>

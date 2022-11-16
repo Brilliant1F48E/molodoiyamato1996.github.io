@@ -15,11 +15,51 @@
 		font-family: $ff-primary;
 		font-weight: $fw-bold;
 		background-color: $color_white;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.arrow-down{
+			min-width: 48px;
+			min-height: 48px;
+			max-width: 48px;
+			max-height: 48px;
+			transition: .3s;
+
+			path{
+				fill: $color_black;
+			}
+		}
+
+		.arrow-down._rotate{
+			transform: rotate(180deg);
+		}
 	}
 	&__body{
 		border-top: 1px solid #000;
 		background-color: darken($color_white, 5%);
 		padding: $base * 4px;
+		transition: .5s;
 		display: none;
+	}
+}
+
+@media (max-width: $lg){
+	.question{
+		&__trigger{
+			padding: $base * 2px;
+			font-size: 24px;
+
+			span{
+				margin-right: 10px;
+			}
+
+			.arrow-down{
+				min-width: 32px;
+				min-height: 32px;
+				max-width: 32px;
+				max-height: 32px;
+			}
+		}
 	}
 }

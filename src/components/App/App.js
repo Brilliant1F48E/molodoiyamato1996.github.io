@@ -21,7 +21,7 @@ const App = () => {
 				<Live />
 				<Teams />
 				<TournamentBracket />
-				<TournamentTable />
+				{/* <TournamentTable /> */}
 				<FAQ />
 			</main>
 			<Footer />

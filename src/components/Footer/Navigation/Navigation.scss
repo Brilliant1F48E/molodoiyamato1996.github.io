@@ -1,0 +1,38 @@
+@import '../../../static/scss/variables';
+
+
+.navigation{
+	color: $color_white;
+
+	&__title{
+		font-size: 24px;
+		font-weight: $fw-medium;
+		margin-bottom: 20px;
+	}
+	&__list{
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	&__link{
+		cursor: pointer;
+		color: rgba($color_white, .7);
+		transition: .5s;
+
+		&:hover{
+			color: $color_white;
+		}
+	}
+}
+
+@media (max-width: $lg) {
+	.navigation{
+		text-align: center;
+	
+		&__list{
+			align-items: center;
+			gap: 40px;
+		}
+	}
+}

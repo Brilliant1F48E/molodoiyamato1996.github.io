@@ -28,10 +28,12 @@
 }
 
 .menu{
+
 	&__body{
 		display: flex;
 		align-items: center;
 		gap: $base * 4px;
+		padding: 10px;
 	}
 	&__link{
 		cursor: pointer;
