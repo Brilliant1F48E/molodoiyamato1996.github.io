@@ -1,27 +1,55 @@
+import { useState, useEffect } from 'react';
+
 import './MatchTeam.scss';
 
+
 const MatchTeam = (props) => {
-	let matchTeamEls = []
+	const [team, setTeam] = useState(null);
+	const [isLoaded, setIsLoaded] = useState(false);
+	const [error, setError] = useState(null);
 
-	if (props.photo && props.name) {
-		const img = `/images/${props.photo}`;
+	useEffect(() => {
+		if (props.teamId) {
+			const body = JSON.stringify({ tournamentTeamId: props.teamId });
 
-		matchTeamEls = [
-			<div className="match-team__photo">
-				<img src={process.env.PUBLIC_URL + img} alt="" />
-			</div>,
-			<div className="match-team__name">{props.name}</div>
-		]
+			fetch("api/team/getTournamentTeam", {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json;charset=utf-8'
+				},
+				body: body
+			})
+				.then(response => response.json())
+				.then(
+					(result) => {
+						setIsLoaded(true)
+						setTeam(result.tournamentTeam)
+					},
+					(error) => {
+						setIsLoaded(true)
+						setError(error.error)
+					});
+		}
+	}, [])
+
+	if (team) {
+		const img = `/images/${team.photo}`;
+
+		return (
+			<div className="match-team">
+				<div className="match-team__photo">
+					<img src={process.env.PUBLIC_URL + img} alt="" />
+				</div>
+				<div className="match-team__name">{team.name}</div>
+			</div>
+		)
 	} else {
-		matchTeamEls = [
-			<div className="math-team__none">?</div>
-		]
+		return (
+			<div className="match-team">
+				<div className="math-team__none">?</div>
+			</div>
+		)
 	}
-	return (
-		<div className="match-team">
-			{matchTeamEls}
-		</div>
-	)
 }
 
 export default MatchTeam;

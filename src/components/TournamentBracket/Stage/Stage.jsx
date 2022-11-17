@@ -6,35 +6,6 @@ import './Stage.scss';
 
 
 const Stage = (props) => {
-	const [matches, setMatches] = useState([]);
-	const [isLoaded, setIsLoaded] = useState(false);
-	const [error, setError] = useState(null);
-
-	useEffect(() => {
-		const data = {
-			stage: props.stage,
-			group: props.group
-		}
-
-		fetch("/api/matches/getMatches", {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json;charset=utf-8'
-			},
-			body: JSON.stringify(data)
-		})
-			.then(response => response.json())
-			.then(
-				(result) => {
-					setMatches(result.items);
-					setIsLoaded(true);
-				},
-				(error) => {
-					setError(error.error);
-					setIsLoaded(true);
-				});
-	}, [])
-
 	let stageTitleText = '';
 	let countMatches = 0;
 
@@ -48,19 +19,30 @@ const Stage = (props) => {
 		stageTitleText = 'Финал'
 		countMatches = 1;
 	}
-
-	const matchesActive = matches.map(match => {
-		const firstTournamentTeamId = match.first_tournament_team_id ? match.first_tournament_team_id : false
-		const secondTournamentTeamId = match.second_tournament_team_id ? match.second_tournament_team_id : false
-
-		return <Match key={match.id} firstTournamentTeamId={firstTournamentTeamId} secondTournamentTeamId={secondTournamentTeamId} />
-	});
-
-	if (matchesActive.length !== countMatches) {
-		const left = countMatches - matchesActive.length
-
-		for (let i = 0; i < left; i++) {
-			matchesActive.push(<Match firstTournamentTeamId={false} secondTournamentTeamId={false} />)
+	let matches = []
+	if (props.stage === 'FINAL') {
+		for (let i = 13; i < 14; i++) {
+			matches.push(<Match number={i} />);
+		}
+	} else if (props.stage === 'SEMIFINAL') {
+		if (props.group === 'B') {
+			for (let i = 11; i < 13; i++) {
+				matches.push(<Match number={i} />);
+			}
+		} else if (props.group === 'A') {
+			for (let i = 9; i < 11; i++) {
+				matches.push(<Match number={i} />);
+			}
+		}
+	} else if (props.stage === 'QUARTERFINAL') {
+		if (props.group === 'B') {
+			for (let i = countMatches + 1; i < (countMatches * 2 + 1); i++) {
+				matches.push(<Match number={i} />);
+			}
+		} else if (props.group === 'A') {
+			for (let i = 1; i < (countMatches + 1); i++) {
+				matches.push(<Match number={i} />);
+			}
 		}
 	}
 
@@ -68,10 +50,11 @@ const Stage = (props) => {
 		<div className={`stage ${props.stage.toLowerCase()} ${props.group}`}>
 			<div className="stage__title">{stageTitleText}</div>
 			<div className={`stage__matches ${props.stage.toLowerCase()} ${props.group}`}>
-				{matchesActive}
+				{matches}
 			</div>
 		</div>
 	)
 }
+
 
 export default Stage;
