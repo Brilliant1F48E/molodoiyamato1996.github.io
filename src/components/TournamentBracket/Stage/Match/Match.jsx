@@ -12,7 +12,7 @@ const Match = (props) => {
 	useEffect(() => {
 		const body = JSON.stringify({ numberMatch: props.number });
 
-		fetch("api/match/getMatch", {
+		fetch("api/matches/getMatch", {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json;charset=utf-8'
@@ -32,18 +32,25 @@ const Match = (props) => {
 	}, [])
 
 	if (match) {
-		const firstTournamentTeamId = match.firstTournamentTeamId ? match.firstTournamentTeamId : false;
-		const secondTournamentTeamId = match.secondTournamentTeamId ? match.secondTournamentTeamId : false;
-
 		return (
 			<div className="item">
 				<div className="match">
-					<MatchTeam teamId={firstTournamentTeamId} />
-					<MatchTeam teamId={secondTournamentTeamId} />
+					<MatchTeam teamId={match.firstTournamentTeamId} />
+					<MatchTeam teamId={match.secondTournamentTeamId} />
+				</div>
+			</div>
+		)
+	} else {
+		return (
+			<div className="item">
+				<div className="match">
+					<MatchTeam teamId={false} />
+					<MatchTeam teamId={false} />
 				</div>
 			</div>
 		)
 	}
+
 
 }
 

@@ -12,7 +12,7 @@ const MatchTeam = (props) => {
 		if (props.teamId) {
 			const body = JSON.stringify({ tournamentTeamId: props.teamId });
 
-			fetch("api/team/getTournamentTeam", {
+			fetch("api/teams/getTournamentTeam", {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json;charset=utf-8'
