@@ -52,10 +52,10 @@ const Header = () => {
 						<span></span>
 					</div>
 					<nav className={menuState ? 'menu__body _active' : 'menu__body'}>
-						<Link className='menu__link' to='hero' smooth={true} duration={1000} offset={-100}>Главная</Link>
-						<Link className='menu__link' to='tournament-bracket' smooth={true} duration={1000} offset={-100}>Турнирная сетка</Link>
-						<Link className='menu__link' to='live' smooth={true} duration={1000} offset={-100}>Прямая трансляция</Link>
-						<Link className='menu__link' to='faq' smooth={true} duration={1000} offset={-100}>FAQ</Link>
+						<Link className='menu__link' to='hero' smooth={true} duration={1000} offset={-100} onClick={() => menuToggle(menuState)}>Главная</Link>
+						<Link className='menu__link' to='tournament-bracket' smooth={true} duration={1000} offset={-100} onClick={() => menuToggle(menuState)}>Турнирная сетка</Link>
+						<Link className='menu__link' to='live' smooth={true} duration={1000} offset={-100} onClick={() => menuToggle(menuState)}>Прямая трансляция</Link>
+						<Link className='menu__link' to='faq' smooth={true} duration={1000} offset={-100} onClick={() => menuToggle(menuState)}>FAQ</Link>
 					</nav>
 				</div>
 			</div>
