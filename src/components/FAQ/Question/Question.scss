@@ -3,16 +3,18 @@
 
 .question{
 	color: $color_black;
+	position: relative;
 
 	&._active &__body{
 		display: block;
 	}
 	
 	&__trigger{
+		position: relative;
+		z-index: 5;
 		cursor: pointer;
 		padding: $base * 3px;
-		font-size: 32px;
-		font-family: $ff-primary;
+		font-size: 24px;
 		font-weight: $fw-bold;
 		background-color: $color_white;
 		display: flex;
@@ -39,8 +41,8 @@
 		border-top: 1px solid #000;
 		background-color: darken($color_white, 5%);
 		padding: $base * 4px;
-		transition: .5s;
 		display: none;
+		line-height: 1.5;
 	}
 }
 

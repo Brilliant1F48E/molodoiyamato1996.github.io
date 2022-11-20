@@ -25,8 +25,6 @@ const Teams = () => {
 
 	const teamsData = teams.map(team => <Team key={team.id} photo={team.photo} name={team.name} height={234} />);
 
-	console.log(teams.length > 0);
-
 	if (teams.length > 0) {
 		return (
 			<section className="teams outer">

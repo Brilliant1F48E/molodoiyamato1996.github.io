@@ -24,6 +24,12 @@
 			color: $color_white;
 		}
 	}
+
+	&__icon{
+		width: 24px;
+		height: 32px;
+		fill: $color_white;
+	}
 }
 
 @media (max-width: $lg) {
