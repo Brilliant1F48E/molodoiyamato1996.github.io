@@ -5,16 +5,12 @@ import Social from './Social/Social';
 import Navigation from './Navigation/Navigation';
 import logo from '../../static/icon/logo.svg';
 import file from '../../static/Регламент.pdf';
+import DownloadFile from '../DownloadFile/DownloadFile';
 
 import './Footer.scss';
 
+
 const Footer = () => {
-	const downloadFile = file => {
-		const link = document.createElement('a');
-		link.href = file;
-		link.download = file.split('/')[3].split('.')[0] + '.pdf';
-		link.click();
-	};
 
 	return (
 		<footer className="footer outer">
@@ -27,7 +23,7 @@ const Footer = () => {
 							При поддержке СПК
 						</div>
 					</Link>
-					<button className="footer__download-rule" onClick={() => downloadFile(file)}>Скачать регламент турнира</button>
+					<DownloadFile text='Скачать регламент турнира' file={file} />
 				</div>
 				<Navigation />
 				<Social />

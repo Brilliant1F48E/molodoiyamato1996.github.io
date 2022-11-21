@@ -11,20 +11,7 @@
 		display: flex;
 		justify-content: space-between;
 	}
-
-	&__download-rule{
-		background-color: transparent;
-		color: rgba($color_white, .8);
-		text-decoration: underline;
-		cursor: pointer;
-		font-weight: $fw-medium;
-		font-size: 18px;
-		transition: .5s;
-
-		&:hover{
-			color: rgba($color_white, 1);
-		}
-	}
+	
 	&-logo{
 		display: flex;
 		align-items: center;

@@ -9,6 +9,13 @@
 		display: block;
 	}
 	
+	.download-rule,
+	&__link{
+		text-decoration: underline;
+		font-size: 16px;
+		font-weight: $fw-medium;
+		color: $color_orange;
+	}
 	&__trigger{
 		position: relative;
 		z-index: 5;
