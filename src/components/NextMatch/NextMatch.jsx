@@ -31,7 +31,7 @@ const NextMatch = () => {
 		console.log(typeof (nextGame.start_date));
 		return (
 			<section className="next-game outer">
-				<div className="section-title">Следующий матч</div>
+				<div className="section-title">Следующая игра</div>
 				<div className="container">
 					<div className="next-game__row">
 						<Team photo={nextGame.first_tournament_team.photo} height={200} />
@@ -53,9 +53,9 @@ const NextMatch = () => {
 	} else {
 		return (
 			<section className="next-game outer">
-				<div className="section-title">Следующий матч</div>
+				<div className="section-title">Следующая игра</div>
 				<div className="container">
-					<div className='next-game__notify'>Следующая игра ещё не назначенна</div>
+					<div className='next-game__notify'>Следующая игра ещё не назначена</div>
 				</div>
 			</section>
 		)

@@ -45,7 +45,7 @@ const Live = () => {
 				<div className="section-title">Прямая трансляция</div>
 				<div className="container">
 					<div className="live__wrapper">
-						<div className="live__notify">Трансляция в данный момент недоступа</div>
+						<div className="live__notify">Трансляция в данный момент недоступна</div>
 					</div>
 				</div>
 			</section>

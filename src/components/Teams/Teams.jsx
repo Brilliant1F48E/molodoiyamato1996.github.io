@@ -39,7 +39,7 @@ const Teams = () => {
 			<section className="teams outer">
 				<div className="section-title">Команды</div>
 				<div className="container">
-					<h2 className='teams__notify'>На данный момент ни одна команда не зарегистрирована</h2>
+					<h2 className='teams__notify'>На данный момент ни одна команда ещё не зарегистрирована</h2>
 				</div>
 			</section>
 		)
