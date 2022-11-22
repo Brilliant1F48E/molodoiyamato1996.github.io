@@ -1,7 +1,7 @@
-@import '../../../static/scss/variables';
+@import '../../static/scss/variables';
 
 
-.navigation{
+.social{
 	color: $color_white;
 
 	&__title{
@@ -15,21 +15,22 @@
 		gap: 20px;
 	}
 
-	&__link{
-		cursor: pointer;
-		color: rgba($color_white, .7);
+	&__icon{
+		width: 32px;
+		height: 32px;
+		fill: rgba($color_white, .7);
 		transition: .5s;
 
 		&:hover{
-			color: $color_white;
+			fill: $color_orange;
 		}
 	}
 }
 
 @media (max-width: $lg) {
-	.navigation{
+	.social{
 		text-align: center;
-	
+		
 		&__list{
 			align-items: center;
 			gap: 40px;

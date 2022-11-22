@@ -1,8 +1,8 @@
 import { HandySvg } from 'handy-svg';
 import { Link } from 'react-scroll';
 
-import Social from './Social/Social';
-import Navigation from './Navigation/Navigation';
+import Social from '../Social/Social';
+import Navigation from '../Navigation/Navigation';
 import logo from '../../static/icon/logo.svg';
 import file from '../../static/Регламент.pdf';
 import DownloadFile from '../DownloadFile/DownloadFile';
@@ -25,8 +25,14 @@ const Footer = () => {
 					</Link>
 					<DownloadFile text='Скачать регламент турнира' file={file} />
 				</div>
-				<Navigation />
-				<Social />
+				<div className="footer__column">
+					<div className="footer__title">Навигация</div>
+					<Navigation />
+				</div>
+				<div className="footer__column">
+					<div className="footer__title">Контакты</div>
+					<Social />
+				</div>
 			</div>
 		</footer>
 	);

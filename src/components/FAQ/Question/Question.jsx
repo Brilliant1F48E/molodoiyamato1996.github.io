@@ -22,12 +22,12 @@ const Question = (props) => {
 		for (let i = 0; i < links.length; i++) {
 			questionBody.push(<span>{text[i]}{linkEls[i]}</span>);
 		}
-
+		questionBody.push(<span>{text[links.length]}</span>);
 	} else if (download) {
 		questionBody.push(<span>{text[0]}{download}{text[1]}</span>);
 	}
 
-	questionBody.push(<span>{text[links.length]}</span>);
+
 
 	const questionBodyEl = <div className="question__body" onClick={e => e.stopPropagation()}>{questionBody}</div>;
 

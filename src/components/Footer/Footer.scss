@@ -12,6 +12,18 @@
 		justify-content: space-between;
 	}
 	
+	.footer__title{
+		margin-bottom: 30px;
+		font-size: 24px;
+		font-weight: $fw-medium;
+	}
+	.social__list{
+		align-items: flex-end;
+	}
+
+	.navigation__link{
+		font-size: 18px;
+	}
 	&-logo{
 		display: flex;
 		align-items: center;
@@ -45,7 +57,14 @@
 			align-items: center;
 			gap: 40px;
 		}
-
+		
+		&__title{
+			text-align: center;
+		}
+		.social__list{
+			flex-direction: row;
+		}
+		
 		&-logo{
 			text-align: center;
 			flex-direction: column;
