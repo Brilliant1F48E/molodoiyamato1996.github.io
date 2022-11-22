@@ -25,6 +25,8 @@ const Question = (props) => {
 		questionBody.push(<span>{text[links.length]}</span>);
 	} else if (download) {
 		questionBody.push(<span>{text[0]}{download}{text[1]}</span>);
+	} else {
+		questionBody.push(<span>{text[0]}</span>);
 	}
 
 
