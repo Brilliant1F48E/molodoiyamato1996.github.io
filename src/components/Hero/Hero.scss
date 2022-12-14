@@ -4,13 +4,17 @@
 .hero{
 	color: $color_white;
 	height: 100vh;
-	background-image: url(../../static/img/hero-bg3.jpg);
+	background-image: url(../../static/img/hero-bg.webp);
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	position: relative;
 
+	&.no-webp {
+		background-image: url(../../static/img/hero-bg.jpg);
+	}
+	
 	&__text{
 		width: 100%;
 		max-height: 122px;

@@ -35,8 +35,8 @@ const Match = (props) => {
 		return (
 			<div className="item">
 				<div className="match">
-					<MatchTeam teamId={match.firstTournamentTeamId} />
-					<MatchTeam teamId={match.secondTournamentTeamId} />
+					<MatchTeam team={match.firstTournamentTeam} />
+					<MatchTeam team={match.secondTournamentTeam} />
 				</div>
 			</div>
 		)
@@ -44,8 +44,8 @@ const Match = (props) => {
 		return (
 			<div className="item">
 				<div className="match">
-					<MatchTeam teamId={false} />
-					<MatchTeam teamId={false} />
+					<MatchTeam team={null} />
+					<MatchTeam team={null} />
 				</div>
 			</div>
 		)
